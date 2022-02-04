@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ExampleTests
 {
@@ -35,14 +36,16 @@ namespace ExampleTests
         }
 
         /// <summary>
-        /// Given a string prompt, display the prompt to the user. Then, wait
-        /// for the user to enter a positive integer. If the input is positive
-        /// returns that input as an integer otherwise displays Invalid and prompts the
-        /// user to enter a positive integer
+        /// Given a prompt and a list of options, display the prompt to the user and list each
+        /// options as a list starting with the number 1. 
+        /// Then, wait for the user to enter a positive integer. 
+        /// If the input is one of the listed opptions, returns that input as a number.
+        /// Otherwise, displays 'Invalid' and prompts the user again.
         /// </summary>
         /// <param name="prompt">The message to prompt</param>
+        /// <param name="options">A list of options to choose from this list must contain at least 1 option</param>
         /// <returns>The positive int that the user entered</returns>
-        public static int GetPositiveInteger(string prompt)
+        public static int GetValidOption(string prompt, List<string> options)
         {
             return -1;
         }
