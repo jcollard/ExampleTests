@@ -16,7 +16,7 @@ namespace ExampleTests
 
         public static void RunAllTests()
         {
-            bool testGetPositiveInteger = TestGetPositiveInteger.RunTest();
+            bool testGetPositiveInteger = TestGetValidOption.RunTest();
             Console.WriteLine($"TestGetPositiveInteger: {testGetPositiveInteger}");
             bool testIsPositiveInteger = TestIsPositiveInteger.RunTest();
             Console.WriteLine($"TestIsPositiveInteger: {testIsPositiveInteger}");
@@ -36,11 +36,12 @@ namespace ExampleTests
         }
 
         /// <summary>
-        /// Given a prompt and a list of options, display the prompt to the user and list each
-        /// options as a list starting with the number 1. 
-        /// Then, wait for the user to enter a positive integer. 
-        /// If the input is one of the listed opptions, returns that input as a number.
-        /// Otherwise, displays 'Invalid' and prompts the user again.
+        /// Given a prompt and a non-empty list of options: 
+        /// 1. Display the prompt to the user
+        /// 2. Display each option in the list numbered 1 to n
+        /// 3. Asks the user to select an option from 1 to n
+        /// 4. Validates their input
+        /// 5. Returns the option the user selected.
         /// </summary>
         /// <param name="prompt">The message to prompt</param>
         /// <param name="options">A list of options to choose from this list must contain at least 1 option</param>

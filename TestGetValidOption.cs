@@ -2,7 +2,7 @@ using System;
 
 namespace ExampleTests
 {
-    class TestGetPositiveInteger
+    class TestGetValidOption
     {
 
         public static bool RunTest()
