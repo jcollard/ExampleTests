@@ -12,7 +12,7 @@ namespace ExampleTests
             bool expected = true;
             if (testResult != expected)
             {
-                Console.Error.WriteLine($"Failure: Expected true but was actually {testResult}");
+                Console.Error.WriteLine($"Failure: Expected '5' to be to true but was actually {testResult}");
                 return false;
             }
 

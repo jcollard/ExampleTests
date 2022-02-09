@@ -15,10 +15,11 @@ namespace ExampleTests
 
         public static void RunAllTests()
         {
-            bool testGetPositiveInteger = TestGetPositiveInteger.RunTest();
-            Console.WriteLine($"TestGetPositiveInteger: {testGetPositiveInteger}");
             bool testIsPositiveInteger = TestIsPositiveInteger.RunTest();
             Console.WriteLine($"TestIsPositiveInteger: {testIsPositiveInteger}");
+            bool testGetPositiveInteger = TestGetPositiveInteger.RunTest();
+            Console.WriteLine($"TestGetPositiveInteger: {testGetPositiveInteger}");
+            
         }
 
         /// <summary>
@@ -31,7 +32,25 @@ namespace ExampleTests
         /// <returns>True if the string is positive otherwise false </returns>
         public static bool IsPositiveInteger(string toCheck)
         {
-            return false;
+            if (toCheck == null)
+            {
+                throw new Exception("Cannot parse a null string.");
+            }
+            try {
+                int value = int.Parse(toCheck);
+                if (value <= 0)
+                {
+                    return false;
+                }
+                else // (value > 0)
+                {
+                    return true;
+                }
+            } 
+            catch 
+            {
+                return false;
+            }
         }
 
         /// <summary>
